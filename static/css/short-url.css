@@ -1,0 +1,37 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+body{
+    background-color: #1F1E30;
+}
+
+.data-container{
+    display: block;
+    width: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    background-color: #171621;
+    border-radius: 10px;
+}
+
+.data{
+    text-align: center;
+}
+
+.data-title{
+    padding-top: 2%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+}
+
+#short-url-link{
+    text-decoration: none;
+}
+
+#h3-link:hover{
+    color: grey;
+}

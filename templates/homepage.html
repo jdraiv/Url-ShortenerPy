@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Shortio</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+        <!-- Css -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/homepage.css') }}">
+
+    </head>
+
+    <body>
+
+        <div class="form-container">
+            <header id="header">Url Shortener</header>
+
+            <form action="/short" method="POST" id="short-url-form">
+                <div class="input-container">
+                    <input id="url-input" type="text" placeholder="Url" name="url" autocomplete="off" required>
+
+                    <div id="btn-input-container">
+                        <input id="submit-btn" type="submit" value="Shorten Url">
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+    </body>
+
+
+    <script src="{{url_for('static', filename='js/avoid-redirect.js')}}"></script>
+
+</html>
