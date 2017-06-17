@@ -12,8 +12,11 @@ app = Flask(__name__)
 app.config['MONGO_URI'] = private.database_url
 app.secret_key = private.secret_key
 
-
 mongo = PyMongo(app)
+
+if __name__ == "__main__":
+    app.run()
+
 
 @app.route('/')
 def homepage():
@@ -22,7 +25,6 @@ def homepage():
 @app.route('/s/<path:url_key>')
 def get_url(url_key):
     url_key = request.path[3:]
-    print(url_key)
 
     urls_collection = mongo.db.urls
 
@@ -68,7 +70,3 @@ def short_api():
         else:
             return 'Error'
     return redirect(url_for('short_url', short_url= url_result, original_url=url))
-
-
-#Todo
-#IF the url already exits, send the short url

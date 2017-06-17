@@ -18,6 +18,11 @@
         <!-- Css -->
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/short-url.css') }}">
 
+
+        <!-- Clipboard -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+
+
     </head>
 
     <body>
@@ -36,7 +41,16 @@
             <div style="text-align: center">
                 <a id="short-url-link" class="data data-result" href="{{ complete_url }}"><h3 id="h3-link" class="data-result">{{ short_url }}</h3></a>
             </div>
+
+            <div style="text-align:center">
+                <button class="btns" id="copy-btn" type="submit" value="{{ short_url }}" data-clipboard-text="{{ short_url }} ">Copy To Clipboard</button>
+            </div>
+
+            <h4 id="copy-alert-message">Copied!</h4>
         </div>
+
+
+        <script src="{{url_for('static', filename='js/copy-to-clipboard.js')}}"></script>
 
     </body>
 
