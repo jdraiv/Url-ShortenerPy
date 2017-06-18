@@ -22,6 +22,10 @@
         <!-- Clipboard -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 
+        <!-- FontAwesome-->
+
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
 
     </head>
 
@@ -31,7 +35,8 @@
 
             {% set short_url = request.args.get('short_url') %}
             {% set original_url = request.args.get('original_url') %}
-            {% set complete_url = 'https://' + short_url %}
+            {% set redirect_url = '/s/' + short_url %}
+            {% set complete_url = 'localhost:5000/s/' + short_url %}
 
 
             <h1 class="data data-title" >Original Url</h1>
@@ -39,14 +44,19 @@
 
             <h1 class="data data-title">Short Url</h1>
             <div style="text-align: center">
-                <a id="short-url-link" class="data data-result" href="{{ complete_url }}"><h3 id="h3-link" class="data-result">{{ short_url }}</h3></a>
+                <a id="short-url-link" class="data data-result" href="{{ redirect_url }}"><h3 id="h3-link" class="data-result">{{ complete_url }}</h3></a>
             </div>
 
             <div style="text-align:center">
                 <button class="btns" id="copy-btn" type="submit" value="{{ short_url }}" data-clipboard-text="{{ short_url }} ">Copy To Clipboard</button>
             </div>
 
+            <div style="text-align:center">
+                <button onClick="location.href='/'" class="btns">Home</button>
+            </div>
+
             <h4 id="copy-alert-message">Copied!</h4>
+
         </div>
 
 

@@ -12,7 +12,7 @@ body{
 .data-container{
     display: block;
     width: 80%;
-    margin-top: 5%;
+    margin-top: 3%;
     padding-bottom: 15%;
     margin-left: 10%;
     background-color: #171621;
@@ -41,7 +41,7 @@ body{
 .btns{
     width: 150px;
     height: 50px;
-    margin-top: 5%;
+    margin-top: 3%;
     border-style: solid;
     border-width: 2px;
     background-color: #171621;
@@ -62,4 +62,19 @@ body{
     right: 0;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media(max-width: 640px){
+
+    .data-container{
+        margin-top: 50%;
+    }
+
+    .data-title{
+        font-size: 1.2em;
+        padding-top: 5%;
+    }
+    .data-result{
+        font-size: 0.8em;
+    }
 }

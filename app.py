@@ -49,9 +49,9 @@ def short_api():
         api_result = {}
 
         url = request.form['url']
-        verify_https = helpers.valid_url(url)
+        verify_url = helpers.valid_https(url)
 
-        if verify_https == True:
+        if verify_url == True:
             #Database collection
             urls_collection = mongo.db.urls
 
@@ -62,10 +62,10 @@ def short_api():
                 key = helpers.url_key()
 
                 urls_collection.insert({'url_key': key, 'original_url': url})
-                url_result = 'localhost:5000/s/' + key
+                url_result = key
             else:
                 key = new_url['url_key']
-                url_result = 'localhost:5000/s/' + key
+                url_result = key
             
         else:
             return 'Error'

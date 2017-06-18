@@ -1,7 +1,6 @@
 
 $('#copy-alert-message').hide();
 
-
 function alertMessage(eName){
     $(eName).show();
 
@@ -11,7 +10,6 @@ function alertMessage(eName){
     
     
 }
-
 
 $(document).ready(function(){
 
