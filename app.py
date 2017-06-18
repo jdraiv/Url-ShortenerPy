@@ -39,6 +39,10 @@ def get_url(url_key):
 def short_url(short_url=None):
     return render_template('short-url.html', short_url= short_url)
 
+@app.route('/error')
+def error():
+    return render_template('error.html')
+
 
 @app.route('/short', methods=['POST'])
 def short_api():
@@ -68,5 +72,5 @@ def short_api():
                 url_result = key
             
         else:
-            return 'Error'
+            return redirect(url_for('error'))
     return redirect(url_for('short_url', short_url= url_result, original_url=url))

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Shortio</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Jquery CDN -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Font -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+        <!-- Css -->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/error.css') }}">
+
+    </head>
+
+    <body>
+
+        <h1 id="error">Unvalid Url</h1>
+
+        <div style="text-align:center">
+            <button onClick="location.href='/'" class="btns">Home</button>
+        </div>
+    </body>
+
+</html>
