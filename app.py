@@ -2,15 +2,24 @@
 from flask import Flask, render_template, request, jsonify, redirect, flash, url_for
 from flask_pymongo import PyMongo
 
-
 import helpers
 import requests
 import private
 
+import os
+
+
+#Env variables
+
+#DB_URL
+#SK
+db_url = os.environ.get('DB_URL', None)
+sk = os.environ.get('SK', None)
+
 app = Flask(__name__)
 
-app.config['MONGO_URI'] = private.database_url
-app.secret_key = private.secret_key
+app.config['MONGO_URI'] = db_url
+app.secret_key = sk
 
 mongo = PyMongo(app)
 
