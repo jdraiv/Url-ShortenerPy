@@ -8,11 +8,11 @@ import private
 
 import os
 
-
 #Env variables
 
 #DB_URL
 #SK
+
 db_url = os.environ.get('DB_URL', None)
 sk = os.environ.get('SK', None)
 

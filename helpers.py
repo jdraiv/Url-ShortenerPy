@@ -2,17 +2,16 @@
 import string
 import random
 
-import urllib.request as req
-import urllib.parse as p
+import requests
 
 from random import randint
 
 def valid_url(url):
-    request = req.Request(url)
     try:
-        response = req.urlopen(request)
-        return True
-    except:
+        req = requests.head(url)
+        if req.status_code < 400:
+            return True
+    except Exception:
         return False
 
 
